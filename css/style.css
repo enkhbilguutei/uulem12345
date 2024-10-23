@@ -1,0 +1,93 @@
+/* Basic body styling */
+body {
+    margin: 0;                /* Removes default margin */
+    padding: 0;               /* Removes default padding */
+    font-family: Arial, sans-serif; /* Sets a default font */
+    font-size: 16px;          /* Sets a default font size */
+    line-height: 1.5;         /* Increases line spacing for readability */
+    color: #333;              /* Sets a default text color */
+    background-color: #f8f8f8; /* Sets a light background color */
+}
+
+/* Custom button with hover effect */
+.custom-button {
+    background-color: #ff6f91; /* Pink background color */
+    color: white;              /* White text color */
+    border: none;              /* No border */
+    border-radius: 20px;      /* Rounded corners */
+    padding: 10px 20px;       /* Vertical and horizontal padding */
+    font-size: 16px;          /* Font size */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    margin: 50px;             /* Combined margin for simplicity */
+}
+
+.custom-button:hover {
+    background-color: #ff4f77; /* Darker pink on hover */
+}
+
+/* Larger date button */
+.date-button {
+    background-color: #ff6f91; /* Pink background color */
+    color: white;              /* White text color */
+    border: none;              /* No border */
+    border-radius: 25px;      /* Rounded corners */
+    padding: 20px 30px;       /* Vertical and horizontal padding */
+    font-size: 24px;          /* Font size */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    margin: 50px;             /* Combined margin for simplicity */
+}
+
+.date-button:hover {
+    background-color: #ff4f77; /* Darker pink on hover */
+}
+
+/* Navbar with centered content */
+.navbar {
+    display: flex;              /* Enables flexbox */
+    justify-content: center;    /* Centers items horizontally */
+    align-items: center;        /* Centers items vertically */
+    height: 100px;             /* Fixed height for navbar */
+    background-color: #ffebf3; /* Light background for navbar (optional) */
+}
+
+/* Heart container with centered heart shape */
+.heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;             /* Full viewport height */
+    background-color: #ffebf3; /* Light background color */
+}
+
+/* Heart shape container */
+.heart {
+    position: relative;
+    width: 400px;              /* Width of heart */
+    height: 400px;             /* Height of heart */
+}
+
+/* Flower emoji styling */
+.flower {
+    position: absolute;
+    width: 50px; /* Set desired width */
+    height: 50px; /* Set desired height */
+    animation: floating 3s ease-in-out infinite; /* Floating animation */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+.flower:hover {
+    transform: scale(1.2);     /* Scale up on hover */
+}
+
+/* Floating animation for flowers */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at original position */
+    }
+    50% {
+        transform: translateY(-5px); /* Move up at halfway point */
+    }
+}
