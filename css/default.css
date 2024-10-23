@@ -1,7 +1,16 @@
 body {
   margin: 0;
   padding: 0;
-  background: #ffe;
+  background: rgb(120, 9, 121);
+  background: radial-gradient(
+    circle,
+    rgba(120, 9, 121, 1) 0%,
+    rgba(36, 0, 0, 1) 64%,
+    rgba(0, 6, 36, 1) 100%,
+    rgba(0, 212, 255, 1) 100%,
+    rgba(0, 6, 36, 1) 100%,
+    rgba(0, 166, 33, 1) 100%
+  );
   font-size: 12px;
   overflow: auto;
 }

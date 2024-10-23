@@ -1,23 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Үүлэмд зориулав</title>
-    <link
-      rel="stylesheet"
-      href="https://kit.fontawesome.com/a14ae32021.js"
+    <script
+      src="https://kit.fontawesome.com/a14ae32021.js"
       crossorigin="anonymous"
-    />
+    ></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Үүлэмд зориулав</title>
 
-    <link rel="stylesheet" href="css/styles.css" />
-    <style>
+    <style type="text/css">
       @font-face {
         font-family: digit;
-        src: url("digital-7mono.ttf") format("truetype");
+        src: url("digital-7_mono.ttf") format("truetype");
       }
     </style>
+    <link href="css/default.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
   </head>
+
   <body>
     <div id="mainDiv">
       <div id="content">
@@ -69,30 +71,38 @@
       </div>
     </div>
 
-    <script src="/js/flower.js"></script>
-    <script src="/js/functions.js"></script>
-    <script src="/js/jquery.js"></script>
-
-    <script>
-      const offsetX = $("$loveHeart").width() / 2;
-      const offsetY = $("$loveHeart").height() / 2 - 55;
-      const together = new Date(2022, 11, 1, 16, 30);
+    <script type="text/javascript">
+      var offsetX = $("#loveHeart").width() / 2;
+      var offsetY = $("#loveHeart").height() / 2 - 55;
+      var together = new Date();
+      together.setFullYear(2016, 8, 5);
+      together.setHours(16);
+      together.setMinutes(30);
+      together.setSeconds(0);
+      together.setMilliseconds(0);
 
       if (!document.createElement("canvas").getContext) {
-        const msg = document.createElement("div");
+        var msg = document.createElement("div");
         msg.id = "errorMsg";
         msg.innerHTML =
-          "browser chine html5 demmjihgui baina!<br>Chrome esvel Safari-g desktop deer hereglehiig zuvluj baina";
+          "browser chine HTML5 demjihgui baina, brave bish, chrome ashiglaarai ho";
         document.body.appendChild(msg);
-        $("#code").hide();
-        $("copyright").css({ position: "absolute", bottom: "10px" });
+        $("#code").css("display", "none");
+        $("#copyright").css("position", "absolute");
+        $("#copyright").css("bottom", "10px");
         document.execCommand("stop");
       } else {
-        setTimeout(startHeartAnimation, 5000);
+        setTimeout(function () {
+          startHeartAnimation();
+        }, 5000);
+
         timeElapse(together);
-        setInterval(() => timeElapse(together), 500);
+        setInterval(function () {
+          timeElapse(together);
+        }, 500);
+
         adjustCodePosition();
-        $("code").typewriter();
+        $("#code").typewriter();
       }
     </script>
   </body>
