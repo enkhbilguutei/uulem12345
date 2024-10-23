@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Үүлэмд зориулав</title>
+    <link
+      rel="stylesheet"
+      href="https://kit.fontawesome.com/a14ae32021.js"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      @font-face {
+        font-family: digit;
+        src: url("digital-7mono.ttf") format("truetype");
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mainDiv">
+      <div id="content">
+        <div id="code">
+          <span class="comments">/**</span><br />
+          <span class="space" /><span class="comments">*Хайраар бүтсэн код</span
+          ><br />
+          <span class="space" /><span class="comments">*/</span><br />
+          Сайн уу Охион!<br />
+          Анх чамайг харсан өдрийг хэзээ гэдгийг мэдэх үү?<br />
+          <span class="comments">// 2022/09/20 Marketing ийн лекц;</span><br />
+          Тэр өдрөөс хойш миний амьдралд гэрэл ассан;<br />
+          <span class="comments"
+            >// Чиний тэр даруухан байдал, өхөөрдөм хоолой.</span
+          ><br />
+          Чиний бүх зүйл миний зүрхэнд шивэгдсэн мэт тэр мэдрэмж;<br />
+          Тэрнээс яг жилийн дараа...;<br />
+          Хувь тавилан бид 2 ийг;<br />
+          Journey from infatuation to love;<br />
+          Миний амьдралын хамгийн үнэт мөчүүд зөвхөн чамтайгаа хамт л байх үед
+          тохиолдсон;<br />
+          Тэр дунд нэгэндээ уурлаж гомдох үе зөндөө байсан ч ;<br />
+          <span class="comments"
+            >// Хоёулаа тэр бүгдийг даваад гарч чадсан.</span
+          ><br />
+          Магадгүй тэр бүх зүйлс чи бид 2 ийг илүү хүчирхэг байлгах суурь болсон
+          байх;<br /><br />
+          Миний хэлэх гээд байгаа зүйл гэвэл:<br />
+          Хайрт минь, чамайгаа би үүр хайрлах болно;<br /><br />
+          Харин одоо, намайг тэврэхийг хүсч байвал доорх улаан зүрхэн дээр
+          дараарай<br /><br />
+          <span id="heartspan">
+            <a href="image.jpg"><i class="fas fa-heart" id="icon"></i></a>
+          </span>
+        </div>
+        <div id="loveHeart">
+          <canvas id="garden"></canvas>
+          <div id="words">
+            <div id="messages">
+              Үүрд хамтдаа
+              <div id="elapseClock"></div>
+            </div>
+            <div id="loveu">
+              Хязгааргүй их хайртай шүү<br />
+              <div class="signature">-Билгүүтэйгээс нь</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/flower.js"></script>
+    <script src="/js/functions.js"></script>
+    <script src="/js/jquery.js"></script>
+
+    <script>
+      const offsetX = $("$loveHeart").width() / 2;
+      const offsetY = $("$loveHeart").height() / 2 - 55;
+      const together = new Date(2022, 11, 1, 16, 30);
+
+      if (!document.createElement("canvas").getContext) {
+        const msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML =
+          "browser chine html5 demmjihgui baina!<br>Chrome esvel Safari-g desktop deer hereglehiig zuvluj baina";
+        document.body.appendChild(msg);
+        $("#code").hide();
+        $("copyright").css({ position: "absolute", bottom: "10px" });
+        document.execCommand("stop");
+      } else {
+        setTimeout(startHeartAnimation, 5000);
+        timeElapse(together);
+        setInterval(() => timeElapse(together), 500);
+        adjustCodePosition();
+        $("code").typewriter();
+      }
+    </script>
+  </body>
+</html>
